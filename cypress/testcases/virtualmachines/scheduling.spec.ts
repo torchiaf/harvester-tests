@@ -14,7 +14,8 @@ describe('VM scheduling on Specific node', () => {
 
   it('Schedule VM on the Node which is Enable Maintenance Mode', () => {
     const hostList = Cypress.env('host');
-    const hostNames: string[] = hostList.map((host: any) => host.name);
+
+    const hostNames: string[] = hostList.map((host: any) => host.customName || host.name);
     const maintenanceNode = hostNames[0]
     const filterMaintenanceNames = hostNames.filter(name => name !== maintenanceNode);
 
