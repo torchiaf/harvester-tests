@@ -22,8 +22,8 @@ export class Constants {
     public volumePage = '/harvester/c/local/harvesterhci.io.volume';
     public imagePage = '/harvester/c/local/harvesterhci.io.virtualmachineimage';
     public virtualManagePage = '/c/local/harvesterManager/harvesterhci.io.management.cluster';
-    public rancher_loginPage = '/dashboard/auth/login';
-    public rancher_dashboardPage = 'dashboard/home';
+    public rancher_loginPage = '/auth/login';
+    public rancher_dashboardPage = 'home';
     public rancher_settingPage = '/dashboard/c/local/settings/management.cattle.io.setting';
     public rancher_virtualizationManagement = '/c/local/harvesterManager/harvesterhci.io.management.cluster';
     public rancher_clusterManagmentPage = '/c/local/manager/provisioning.cattle.io.cluster';

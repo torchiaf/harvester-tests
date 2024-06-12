@@ -122,7 +122,7 @@ export class Navbar {
   }
 
   basePath() {
-    return Cypress.env('NODE_ENV') === 'dev' ? Cypress.env('baseUrl') : `${Cypress.env('baseUrl')}/dashboard`;
+    return Cypress.env('NODE_ENV') === 'dev' ? Cypress.env('baseUrl') : `${Cypress.env('baseUrl')}`;
   }
 }
 
@@ -177,7 +177,7 @@ export default class PagePo extends ComponentPo {
     const isDev = Cypress.env('NODE_ENV') === 'dev';
     let url = path;
     if (!isDev) {
-      url = `/dashboard${path}`;
+      url = `/${path}`;
     }
 
     return url

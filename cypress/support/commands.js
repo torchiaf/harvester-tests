@@ -15,7 +15,7 @@ Cypress.Commands.add('login', (params = {}) => {
     const password = params.password || Cypress.env('password');
 
     const isDev = Cypress.env('NODE_ENV') === 'dev';
-    const baseUrl = isDev ? Cypress.config('baseUrl') : `${Cypress.config('baseUrl')}/dashboard`;
+    const baseUrl = isDev ? Cypress.config('baseUrl') : `${Cypress.config('baseUrl')}`;
     cy.intercept('GET', '/v3-public/authProviders').as('authProviders');
     cy.visit(`/auth/login`);
     cy.wait('@authProviders').then(res => {
@@ -50,7 +50,7 @@ Cypress.Commands.overwrite('visit', (originalFn, url = '', options) => {
   const isDev = Cypress.env('NODE_ENV') === 'dev';
 
   if (!isDev) {
-    url = `/dashboard${url}`;
+    url = `/${url}`;
   }
 
   return originalFn(url, options)
